@@ -1,0 +1,867 @@
+/* Importação das fontes do Google Fonts - alternativa ao link no HTML, mas o link é mais comum */
+/* @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Open+Sans:wght@400;600&display=swap'); */
+
+/* --------------------
+    Variáveis CSS
+-------------------- */
+:root {
+    --primary-color: #4A90E2; /* Azul principal */
+    --secondary-color: #8BC34A; /* Verde secundário */
+    --dark-text: #333333; /* Texto escuro */
+    --light-text: #666666; /* Texto claro */
+    --background-light: #F4F4F4; /* Fundo de seção claro */
+    --white: #FFFFFF; /* Branco puro */
+
+    --font-heading: 'Montserrat', sans-serif;
+    --font-body: 'Open Sans', sans-serif;
+}
+
+/* --------------------
+    Estilos Globais e Reset
+-------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Garante que padding e border sejam incluídos na largura/altura do elemento */
+}
+
+body {
+    font-family: var(--font-body); /* Aplica a fonte do corpo do texto */
+    line-height: 1.6; /* Espaçamento entre linhas para melhor leitura */
+    color: var(--dark-text); /* Cor do texto padrão */
+    background-color: var(--white); /* Cor de fundo padrão do corpo */
+    -webkit-font-smoothing: antialiased; /* Para suavizar a fonte em navegadores WebKit */
+    -moz-osx-font-smoothing: grayscale; /* Para suavizar a fonte em navegadores Mozilla */
+}
+
+/* Container para centralizar e limitar a largura do conteúdo */
+.container {
+    max-width: 1200px; /* Largura máxima do conteúdo */
+    margin: 0 auto; /* Centraliza o container horizontalmente */
+    padding: 0 20px; /* Espaçamento interno nas laterais para telas menores */
+}
+
+/* Estilos básicos para links */
+a {
+    text-decoration: none; /* Remove o sublinhado padrão dos links */
+    color: var(--primary-color); /* Cor dos links */
+    transition: color 0.3s ease; /* Transição suave para o efeito hover */
+}
+
+a:hover {
+    color: var(--secondary-color); /* Muda a cor do link ao passar o mouse */
+}
+
+/* Estilos para cabeçalhos */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading); /* Aplica a fonte dos títulos */
+    color: var(--dark-text); /* Cor dos títulos */
+    margin-bottom: 0.8em; /* Espaçamento abaixo dos títulos */
+}
+
+/* Estilos para botões */
+.btn {
+    display: inline-block; /* Permite definir largura/altura e espaçamento */
+    padding: 12px 25px; /* Espaçamento interno (vertical e horizontal) */
+    border-radius: 5px; /* Bordas arredondadas */
+    font-weight: 600; /* Negrito */
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Transições suaves */
+    cursor: pointer; /* Indica que é clicável */
+    border: none; /* Remove borda padrão */
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    background-color: #3A7BCD; /* Um azul um pouco mais escuro */
+    transform: translateY(-2px); /* Efeito de "levitar" */
+}
+
+.btn-secondary {
+    background-color: var(--secondary-color);
+    color: var(--white);
+}
+
+.btn-secondary:hover {
+    background-color: #7BB040; /* Um verde um pouco mais escuro */
+    transform: translateY(-2px);
+}
+
+/* Estilos para imagens responsivas */
+img {
+    max-width: 100%; /* Garante que a imagem não ultrapasse a largura do seu contêiner */
+    height: auto; /* Mantém a proporção da imagem */
+    display: block; /* Remove espaçamento extra abaixo da imagem */
+}
+
+/* --------------------
+    Cabeçalho (Header)
+-------------------- */
+header {
+    background-color: var(--white);
+    padding: 20px 0;
+    border-bottom: 1px solid #e0e0e0; /* Linha sutil na parte inferior */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* Sombra suave */
+}
+
+header .container {
+    display: flex; /* Flexbox para organizar logo e navegação */
+    justify-content: space-between; /* Espaço entre os itens */
+    align-items: center; /* Alinha verticalmente no centro */
+}
+
+.logo {
+    font-size: 1.8em; /* Tamanho do logo */
+    font-weight: 700; /* Mais negrito */
+    color: var(--primary-color); /* Cor do logo */
+    margin: 0; /* Remove margem padrão do h1 */
+}
+
+header nav ul {
+    list-style: none; /* Remove os marcadores de lista */
+}
+
+header nav ul li {
+    display: inline-block; /* Faz os itens do menu ficarem um ao lado do outro */
+    margin-left: 30px; /* Espaçamento entre os itens do menu */
+}
+
+header nav ul li a {
+    color: var(--dark-text); /* Cor dos links do menu */
+    font-weight: 600; /* Um pouco mais de negrito */
+    font-size: 1.05em; /* Tamanho da fonte */
+}
+
+header nav ul li a:hover {
+    color: var(--primary-color); /* Muda a cor ao passar o mouse */
+}
+
+/* --------------------
+    Seção Principal (Hero Section)
+-------------------- */
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('../images/hero-background.jpg') no-repeat center center/cover; /* Fundo com imagem e sobreposição escura */
+    color: var(--white);
+    text-align: center;
+    padding: 100px 20px; /* Espaçamento interno superior/inferior */
+    display: flex; /* Flexbox para centralizar conteúdo */
+    align-items: center; /* Centraliza verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+    min-height: 450px; /* Altura mínima da seção */
+}
+
+.hero h2 {
+    font-size: 2.8em; /* Tamanho da fonte do título principal */
+    margin-bottom: 15px;
+    color: var(--white); /* Cor do título */
+    line-height: 1.2;
+}
+
+.hero p {
+    font-size: 1.3em; /* Tamanho da fonte do subtítulo */
+    margin-bottom: 30px;
+    max-width: 700px; /* Limita a largura do parágrafo */
+    margin-left: auto; /* Centraliza o parágrafo */
+    margin-right: auto;
+}
+
+.hero .btn-primary {
+    font-size: 1.1em;
+    padding: 15px 35px;
+}
+
+/* Para o fundo da Hero Section, você precisará de uma imagem.
+   Por favor, coloque uma imagem na sua pasta `images`
+   e renomeie-a para `hero-background.jpg`.
+   Pode ser uma imagem abstrata, de livros, ou algo inspirador.
+   Se não tiver uma, o fundo será preto por padrão, até você colocar a imagem.
+*/
+
+/* --------------------
+    Seção de eBooks em Destaque
+-------------------- */
+.featured-ebooks {
+    background-color: var(--background-light);
+    padding: 60px 0;
+    text-align: center;
+}
+
+.featured-ebooks h3 {
+    font-size: 2.2em;
+    margin-bottom: 40px;
+}
+
+.ebook-grid {
+    display: grid; /* Grid CSS para organizar os cards */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Colunas responsivas */
+    gap: 30px; /* Espaçamento entre os cards */
+    max-width: 1000px; /* Limita a largura da grade */
+    margin: 0 auto; /* Centraliza a grade */
+}
+
+.ebook-card {
+    background-color: var(--white);
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08); /* Sombra mais pronunciada */
+    text-align: center;
+    display: flex; /* Flexbox para organizar o conteúdo do card */
+    flex-direction: column; /* Itens empilhados verticalmente */
+    align-items: center; /* Centraliza itens horizontalmente */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transições para hover */
+}
+
+.ebook-card:hover {
+    transform: translateY(-5px); /* Efeito de "levitar" ao passar o mouse */
+    box-shadow: 0 6px 15px rgba(0,0,0,0.12); /* Sombra mais escura */
+}
+
+.ebook-card img {
+    width: 180px; /* Largura da imagem da capa */
+    height: 250px; /* Altura da imagem da capa (ajuste se suas capas tiverem proporções diferentes) */
+    object-fit: cover; /* Garante que a imagem cubra a área, cortando se necessário */
+    border-radius: 5px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Sombra sutil na capa */
+}
+
+.ebook-card h4 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    height: 3em; /* Altura fixa para títulos, ajuda no alinhamento */
+    overflow: hidden; /* Oculta texto que transborda */
+}
+
+.ebook-card p {
+    font-size: 0.95em;
+    color: var(--light-text);
+    margin-bottom: 20px;
+    flex-grow: 1; /* Faz o parágrafo ocupar o espaço restante */
+}
+
+.ebook-card .btn-secondary {
+    margin-top: auto; /* Empurra o botão para o final do card */
+    width: 100%; /* Botão ocupa a largura total do card */
+    max-width: 200px; /* Limita a largura do botão para não ficar muito grande */
+}
+
+
+/* --------------------    Rodapé (Footer) -------------------- */
+/* --------------------
+    Rodapé (Footer)
+-------------------- */
+footer {
+    background-color: var(--dark-text); /* Fundo escuro */
+    color: var(--white); /* Cor do texto no rodapé */
+    padding: 40px 0; /* Espaçamento interno superior e inferior */
+    text-align: center; /* Alinha o texto ao centro */
+    font-size: 0.9em; /* Tamanho da fonte um pouco menor */
+}
+
+footer .container {
+    display: flex; /* Habilita Flexbox */
+    flex-direction: column; /* Organiza os itens em coluna (empilhados) */
+    align-items: center; /* Centraliza os itens horizontalmente (quando em coluna) */
+}
+
+footer p {
+    margin-bottom: 15px; /* Espaçamento abaixo do parágrafo do rodapé */
+    max-width: 800px; /* Limita a largura do texto para melhor leitura */
+}
+
+.social-links {
+    margin-top: 20px; /* Espaçamento acima dos ícones */
+    display: flex; /* Para alinhar os ícones um ao lado do outro */
+    gap: 15px; /* Espaçamento entre os ícones */
+}
+
+.social-links a {
+    display: flex; /* Usa flexbox para centralizar a imagem dentro do círculo */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    width: 45px; /* Largura do círculo */
+    height: 45px; /* Altura do círculo */
+    background-color: var(--white); /* Cor de fundo do círculo */
+    border-radius: 50%; /* Transforma o quadrado em um círculo perfeito */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Sombra suave para profundidade */
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease; /* Transições suaves para hover */
+    color: transparent; /* Torna o texto do link transparente se ainda existir, pois usaremos a imagem */
+}
+
+.social-links a:hover {
+    background-color: var(--primary-color); /* Muda o fundo do círculo ao passar o mouse */
+    transform: translateY(-3px) scale(1.05); /* Efeito de "levitar" e leve aumento de tamanho */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3); /* Sombra mais intensa no hover */
+}
+
+.social-links a img {
+    width: 25px; /* Largura da imagem do ícone dentro do círculo */
+    height: 25px; /* Altura da imagem do ícone */
+    object-fit: contain; /* Garante que a imagem se ajuste sem ser cortada */
+    filter: invert(1); /* Inverte as cores da imagem (se for preta, vira branca) - ajuste conforme suas imagens */
+    transition: filter 0.3s ease; /* Transição para o filtro */
+}
+
+.social-links a:hover img {
+    filter: invert(0); /* Volta a cor original ou para preto quando o fundo do círculo muda para primary-color */
+    /* Dependendo das suas imagens, você pode querer manter invert(1) ou usar outra cor */
+}
+
+/* Ajustes para telas menores (Responsividade) */
+@media (max-width: 480px) {
+    .social-links {
+        gap: 10px; /* Reduz o espaçamento entre ícones em telas menores */
+    }
+    .social-links a {
+        width: 40px; /* Reduz o tamanho do círculo em telas menores */
+        height: 40px;
+    }
+    .social-links a img {
+        width: 22px; /* Reduz o tamanho do ícone */
+        height: 22px;
+    }
+}
+/* --------------------
+    Responsividade Básica
+-------------------- */
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column; /* Coloca logo e navegação em coluna */
+        text-align: center;
+    }
+
+    header nav ul {
+        margin-top: 15px;
+    }
+
+    header nav ul li {
+        margin: 0 10px; /* Reduz o espaçamento entre itens do menu */
+    }
+
+    .hero h2 {
+        font-size: 2.2em; /* Reduz tamanho do título principal em telas menores */
+    }
+
+    .hero p {
+        font-size: 1.1em; /* Reduz tamanho do parágrafo */
+    }
+
+    .ebook-grid {
+        grid-template-columns: 1fr; /* Em telas pequenas, um card por linha */
+    }
+
+    .ebook-card {
+        margin: 0 auto; /* Centraliza cards */
+        max-width: 350px; /* Limita largura do card */
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        padding: 60px 15px;
+    }
+
+    .hero h2 {
+        font-size: 1.8em;
+    }
+
+    .hero p {
+        font-size: 1em;
+    }
+
+    header nav ul li {
+        margin: 0 5px;
+        font-size: 0.9em;
+    }
+
+    .featured-ebooks h3 {
+        font-size: 1.8em;
+    }
+}
+/* --------------------
+    Estilos para Títulos de Páginas (page-title)
+-------------------- */
+.page-title {
+    background-color: var(--primary-color); /* Fundo com a cor principal */
+    color: var(--white);
+    padding: 60px 20px; /* Espaçamento interno */
+    text-align: center;
+    margin-bottom: 40px; /* Espaçamento abaixo da seção de título */
+}
+
+.page-title h2 {
+    font-size: 2.5em;
+    color: var(--white);
+    margin-bottom: 10px;
+}
+
+.page-title p {
+    font-size: 1.1em;
+    max-width: 800px;
+    margin: 0 auto; /* Centraliza o parágrafo */
+}
+
+/* --------------------
+    Seção de Ferramentas de Pesquisa e Filtragem
+-------------------- */
+.ebook-filters {
+    background-color: var(--background-light);
+    padding: 30px 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.ebook-filters .container {
+    display: flex;
+    flex-direction: column;
+    gap: 25px; /* Espaçamento entre a barra de pesquisa e as opções de filtro */
+}
+
+/* Barra de Pesquisa */
+.search-bar {
+    position: relative;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 12px 45px 12px 20px; /* Padding para o ícone e texto */
+    border: 1px solid #ccc;
+    border-radius: 25px; /* Bordas arredondadas */
+    font-size: 1em;
+    color: var(--dark-text);
+    outline: none; /* Remove a borda de foco padrão */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.search-bar input::placeholder {
+    color: var(--light-text);
+}
+
+.search-bar input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.2); /* Sombra suave no foco */
+}
+
+.search-bar .fas.fa-search { /* Estilo para o ícone de lupa */
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--light-text);
+    font-size: 1.1em;
+}
+
+/* Opções de Filtragem */
+.filter-options {
+    display: flex;
+    justify-content: center; /* Centraliza os grupos de filtro */
+    gap: 40px; /* Espaçamento entre grupos (letra e categoria) */
+    flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha em telas pequenas */
+    text-align: center;
+}
+
+.filter-group h4 {
+    font-size: 1.1em;
+    color: var(--dark-text);
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+/* Filtragem por Letra */
+.letter-filter {
+    display: flex;
+    flex-wrap: wrap; /* Quebra as letras em várias linhas se necessário */
+    justify-content: center;
+    gap: 8px; /* Espaçamento entre as letras */
+}
+
+.letter-filter .filter-item {
+    padding: 8px 12px;
+    border: 1px solid var(--primary-color);
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+    font-weight: 600;
+    color: var(--primary-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    user-select: none; /* Previne seleção de texto */
+}
+
+.letter-filter .filter-item:hover {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.letter-filter .filter-item.active {
+    background-color: var(--primary-color);
+    color: var(--white);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+/* Filtragem por Categoria (Select Box) */
+.custom-select {
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: var(--white);
+    font-size: 1em;
+    color: var(--dark-text);
+    outline: none;
+    cursor: pointer;
+    appearance: none; /* Remove a seta padrão do select em alguns navegadores */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg fill="%23333333" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>'); /* Seta personalizada */
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 20px;
+    min-width: 200px;
+}
+
+.custom-select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.2);
+}
+
+/* --------------------
+    Botão Voltar ao Topo
+-------------------- */
+#scrollToTopBtn {
+    display: none; /* Inicialmente oculto, JS irá mostrar/ocultar */
+    position: fixed; /* Fixa na tela */
+    bottom: 30px; /* 30px do fundo */
+    right: 30px; /* 30px da direita */
+    z-index: 99; /* Garante que fique acima de outros elementos */
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: none;
+    border-radius: 50%; /* Círculo */
+    width: 50px;
+    height: 50px;
+    font-size: 1.5em;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: background-color 0.3s ease, transform 0.2s ease, opacity 0.3s ease;
+    display: flex; /* Para centralizar o ícone */
+    justify-content: center;
+    align-items: center;
+}
+
+#scrollToTopBtn:hover {
+    background-color: #3A7BCD; /* Um pouco mais escuro no hover */
+    transform: translateY(-3px); /* Leve efeito de "levitar" */
+    box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+}
+
+/* Responsividade para os filtros e botão voltar ao topo */
+@media (max-width: 768px) {
+    .ebook-filters .container {
+        padding: 0 15px; /* Reduz padding lateral */
+    }
+
+    .filter-options {
+        flex-direction: column; /* Empilha os grupos de filtro */
+        gap: 20px;
+    }
+
+    .letter-filter {
+        justify-content: flex-start; /* Alinha as letras à esquerda em telas menores */
+    }
+}
+
+@media (max-width: 480px) {
+    .ebook-filters {
+        padding: 20px 0;
+    }
+    .search-bar input {
+        font-size: 0.9em;
+        padding: 10px 40px 10px 15px;
+    }
+    .search-bar .fas.fa-search {
+        font-size: 1em;
+        right: 15px;
+    }
+    .letter-filter .filter-item {
+        padding: 6px 10px;
+        font-size: 0.8em;
+    }
+    .custom-select {
+        font-size: 0.9em;
+        padding: 8px 12px;
+        min-width: unset; /* Remove largura mínima */
+        width: 100%; /* Ocupa largura total */
+    }
+    #scrollToTopBtn {
+        width: 45px;
+        height: 45px;
+        font-size: 1.3em;
+        bottom: 20px;
+        right: 20px;
+    }
+}
+/* --------------------
+    Estilos para a Seção de Todos os eBooks
+-------------------- */
+.all-ebooks {
+    padding: 20px 0 60px 0; /* Espaçamento interno, mais padding inferior */
+    background-color: var(--background-light); /* Fundo claro para contraste */
+}
+
+/* Estilo para o link ativo no menu de navegação */
+header nav ul li a.active {
+    color: var(--primary-color); /* Cor principal para o link ativo */
+    font-weight: 700; /* Mais negrito */
+    border-bottom: 2px solid var(--primary-color); /* Linha inferior para destaque */
+    padding-bottom: 5px; /* Espaçamento entre o texto e a linha */
+}
+
+/* Em telas menores, podemos ajustar o padding do page-title */
+@media (max-width: 768px) {
+    .page-title {
+        padding: 40px 20px;
+    }
+    .page-title h2 {
+        font-size: 2em;
+    }
+    .page-title p {
+        font-size: 1em;
+    }
+}
+/* --------------------
+    Seção Sobre o Autor (About Author)
+-------------------- */
+.about-author {
+    padding: 60px 0;
+    background-color: var(--white); /* Fundo branco para contraste */
+}
+
+.author-content {
+    display: flex; /* Habilita Flexbox para alinhar imagem e texto */
+    align-items: flex-start; /* Alinha os itens pelo topo */
+    gap: 50px; /* Espaçamento entre a imagem e o texto */
+    max-width: 900px; /* Limita a largura do conteúdo do autor */
+    margin: 0 auto; /* Centraliza o conteúdo */
+}
+
+.author-image {
+    flex-shrink: 0; /* Previne que a imagem encolha se não houver espaço */
+    text-align: center; /* Centraliza a imagem */
+}
+
+.author-image img {
+    width: 250px; /* Tamanho da sua foto */
+    height: 250px; /* Certifica que é um quadrado para o border-radius */
+    border-radius: 50%; /* Transforma a foto em um círculo */
+    object-fit: cover; /* Garante que a imagem preencha o círculo sem distorção */
+    border: 5px solid var(--primary-color); /* Borda colorida ao redor da foto */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2); /* Sombra para dar profundidade */
+}
+
+.author-bio {
+    flex-grow: 1; /* Permite que a biografia ocupe o espaço restante */
+}
+
+.author-bio h3 {
+    font-size: 2em;
+    color: var(--primary-color); /* Título da biografia com cor principal */
+    margin-bottom: 20px;
+}
+
+.author-bio p {
+    font-size: 1.1em;
+    margin-bottom: 15px;
+    color: var(--dark-text);
+}
+
+.author-bio .btn-primary {
+    margin-top: 20px;
+    font-size: 1em;
+}
+
+/* --------------------
+    Responsividade para a Seção Sobre o Autor
+-------------------- */
+@media (max-width: 768px) {
+    .author-content {
+        flex-direction: column; /* Em telas menores, a imagem e o texto ficam empilhados */
+        align-items: center; /* Centraliza itens quando empilhados */
+        gap: 30px; /* Reduz o espaçamento */
+    }
+
+    .author-image img {
+        width: 180px; /* Reduz o tamanho da foto em telas menores */
+        height: 180px;
+    }
+
+    .author-bio {
+        text-align: center; /* Centraliza o texto da biografia */
+    }
+
+    .author-bio h3 {
+        font-size: 1.8em;
+    }
+
+    .author-bio p {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-author {
+        padding: 40px 0;
+    }
+}
+/* --------------------
+    Seção de Artigos do Blog (blog-posts)
+-------------------- */
+.blog-posts {
+    padding: 60px 0;
+    background-color: var(--background-light); /* Fundo claro para contraste */
+}
+
+.post-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* 3 colunas em telas grandes, responsivo */
+    gap: 30px; /* Espaçamento entre os cards */
+    max-width: 1000px; /* Limita a largura da grade */
+    margin: 0 auto; /* Centraliza a grade */
+}
+
+.blog-card {
+    background-color: var(--white);
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    text-align: left; /* Alinha o texto à esquerda */
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.12);
+}
+
+.blog-card img {
+    width: 100%; /* Imagem ocupa toda a largura do card */
+    height: 200px; /* Altura fixa para as imagens dos posts */
+    object-fit: cover; /* Garante que a imagem cubra a área sem distorcer */
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.blog-card h3 {
+    font-size: 1.6em;
+    margin-bottom: 10px;
+    height: 2.5em; /* Altura fixa para títulos, ajuda no alinhamento */
+    overflow: hidden; /* Oculta texto que transborda */
+    color: var(--primary-color);
+}
+
+.blog-card p {
+    font-size: 0.95em;
+    color: var(--light-text);
+    margin-bottom: 20px;
+    flex-grow: 1; /* Faz o parágrafo ocupar o espaço restante */
+}
+
+.blog-card .btn-secondary {
+    margin-top: auto; /* Empurra o botão para o final do card */
+    width: auto; /* Botão com largura automática */
+    align-self: flex-start; /* Alinha o botão à esquerda dentro do flex container */
+    font-size: 0.9em;
+    padding: 10px 20px;
+}
+
+/* --------------------
+    Estilos para Páginas de Artigos Individuais (post-content)
+-------------------- */
+.post-content {
+    padding: 60px 0;
+    background-color: var(--white); /* Fundo branco */
+}
+
+.post-content .container {
+    max-width: 800px; /* Limita a largura do conteúdo do artigo para melhor leitura */
+    margin: 0 auto;
+    line-height: 1.8; /* Aumenta o espaçamento entre linhas para o texto do artigo */
+    font-size: 1.1em;
+}
+
+.post-content h2 {
+    font-size: 2.5em;
+    color: var(--primary-color);
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.post-content p {
+    margin-bottom: 20px;
+    color: var(--dark-text);
+}
+
+.post-content strong {
+    font-weight: 700;
+    color: var(--primary-color); /* Destaca negritos com a cor principal */
+}
+
+.post-content ol, .post-content ul {
+    margin-bottom: 20px;
+    margin-left: 20px;
+    list-style-position: outside;
+}
+
+.post-content ol li, .post-content ul li {
+    margin-bottom: 10px;
+}
+
+.post-content .call-to-action {
+    font-size: 1.2em;
+    font-weight: 600;
+    text-align: center;
+    color: var(--secondary-color); /* Destaca a chamada para ação com a cor secundária */
+    padding: 15px;
+    border: 2px dashed var(--secondary-color);
+    border-radius: 8px;
+    margin: 30px auto;
+    max-width: 600px;
+}
+
+.post-content .btn-secondary,
+.post-content .btn-primary {
+    margin-top: 30px;
+    margin-right: 15px;
+    font-size: 1em;
+}
+
+/* Responsividade para o blog */
+@media (max-width: 768px) {
+    .post-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Ajuste para tablets */
+    }
+
+    .post-content .container {
+        padding: 0 20px; /* Adiciona padding nas laterais em telas menores */
+        font-size: 1em;
+    }
+
+    .post-content h2 {
+        font-size: 2em;
+    }
+}
+
+@media (max-width: 480px) {
+    .blog-posts {
+        padding: 40px 0;
+    }
+    .blog-card h3 {
+        font-size: 1.4em;
+        height: auto; /* Remove altura fixa em telas muito pequenas */
+    }
+}

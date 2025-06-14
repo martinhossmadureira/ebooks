@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todos os Meus eBooks - Epignósis Digital</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1 class="logo">Epignósis Digital</h1>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Início</a></li>
+                    <li><a href="ebooks.html" class="active">Todos os eBooks</a></li>
+                    <li><a href="about.html">Sobre o Autor</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-title">
+        <div class="container">
+            <h2>Todos os Meus eBooks</h2>
+            <p>Descubra a coleção completa de eBooks que transformarão sua vida.</p>
+        </div>
+    </section>
+
+    <section class="ebook-filters">
+        <div class="container">
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Pesquisar eBook pelo título...">
+                <i class="fas fa-search"></i> </div>
+
+            <div class="filter-options">
+                <div class="filter-group">
+                    <h4>Filtrar por Letra:</h4>
+                    <div class="letter-filter" id="letterFilter">
+                        <span class="filter-item active" data-filter="all">Todos</span>
+                        <span class="filter-item" data-filter="A">A</span>
+                        <span class="filter-item" data-filter="B">B</span>
+                        <span class="filter-item" data-filter="C">C</span>
+                        <span class="filter-item" data-filter="D">D</span>
+                        <span class="filter-item" data-filter="E">E</span>
+                        <span class="filter-item" data-filter="F">F</span>
+                        <span class="filter-item" data-filter="G">G</span>
+                        <span class="filter-item" data-filter="H">H</span>
+                        <span class="filter-item" data-filter="I">I</span>
+                        <span class="filter-item" data-filter="J">J</span>
+                        <span class="filter-item" data-filter="K">K</span>
+                        <span class="filter-item" data-filter="L">L</span>
+                        <span class="filter-item" data-filter="M">M</span>
+                        <span class="filter-item" data-filter="N">N</span>
+                        <span class="filter-item" data-filter="O">O</span>
+                        <span class="filter-item" data-filter="P">P</span>
+                        <span class="filter-item" data-filter="Q">Q</span>
+                        <span class="filter-item" data-filter="R">R</span>
+                        <span class="filter-item" data-filter="S">S</span>
+                        <span class="filter-item" data-filter="T">T</span>
+                        <span class="filter-item" data-filter="U">U</span>
+                        <span class="filter-item" data-filter="V">V</span>
+                        <span class="filter-item" data-filter="W">W</span>
+                        <span class="filter-item" data-filter="X">X</span>
+                        <span class="filter-item" data-filter="Y">Y</span>
+                        <span class="filter-item" data-filter="Z">Z</span>
+                    </div>
+                </div>
+
+                <div class="filter-group">
+                    <h4>Filtrar por Categoria:</h4>
+                    <select id="categoryFilter" class="custom-select">
+                        <option value="all">Todas as Categorias</option>
+                        <option value="fe">Fé e Espiritualidade</option>
+                        <option value="proposito">Propósito e Chamado</option>
+                        <option value="financas">Finanças e Prosperidade</option>
+                        <option value="relacionamentos">Relacionamentos</option>
+                        <option value="crescimento">Crescimento Pessoal</option>
+                        </select>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="all-ebooks">
+        <div class="container">
+            <div class="ebook-grid" id="ebookGrid"> <div class="ebook-card" data-category="financas fe"> <img src="../images/imagens/As-Janelas-do-Céu-2.png" alt="Capa do eBook As Janelas do Céu">
+                    <h4>As Janelas do Céu - A Maravilhosa Bênção de Provisão</h4>
+                    <p>Descubra o caminho para a provisão divina e a abundância. Liberte-se das preocupações financeiras e confie na promessa de Deus.</p>
+                    <a href="#" class="btn btn-secondary">Comprar Agora</a>
+                </div>
+
+                <div class="ebook-card" data-category="relacionamentos">
+                    <img src="../images/imagens/namoro-Para-Vida-Toda.jpg" alt="Capa do eBook Namoro para a Vida Toda">
+                    <h4>Namoro para a Vida Toda</h4>
+                    <p>Descubra o segredo para um namoro duradouro e abençoado. Evite erros que podem destruir seu relacionamento.</p>
+                    <a href="#" class="btn btn-secondary">Comprar Agora</a>
+                </div>
+
+                <div class="ebook-card" data-category="fe crescimento">
+                    <img src="../images/imagens/Nova-Criação-Capa.png" alt="Capa do eBook Nova Criação">
+                    <h4>Nova Criação: Quem eu sou em Cristo</h4>
+                    <p>Descubra sua verdadeira identidade em Cristo e viva em plenitude. Liberdade total: pare de lutar contra o pecado.</p>
+                    <a href="#" class="btn btn-secondary">Comprar Agora</a>
+                </div>
+
+                <div class="ebook-card" data-category="proposito">
+                    <img src="../images/ebook-placeholder.jpg" alt="Capa do eBook Exemplo 4">
+                    <h4>Título do eBook 4: Desvende seu Propósito</h4>
+                    <p>Breve descrição do eBook 4 e seus principais benefícios.</p>
+                    <a href="#" class="btn btn-secondary">Comprar Agora</a>
+                </div>
+
+                <div class="ebook-card" data-category="financas">
+                    <img src="../images/ebook-placeholder.jpg" alt="Capa do eBook Exemplo 5: Princípios de Gestão Financeira">
+                    <h4>Título do eBook 5: Princípios de Gestão Financeira</h4>
+                    <p>Breve descrição do eBook 5 e seus principais benefícios.</p>
+                    <a href="#" class="btn btn-secondary">Comprar Agora</a>
+                </div>
+
+                <div class="ebook-card" data-category="crescimento">
+                    <img src="../images/ebook-placeholder.jpg" alt="Capa do eBook Exemplo 6: Liderança e Caráter">
+                    <h4>Título do eBook 6: Liderança e Caráter</h4>
+                    <p>Breve descrição do eBook 6 e seus principais benefícios.</p>
+                    <a href="#" class="btn btn-secondary">Comprar Agora</a>
+                </div>
+                </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Epignósis Digital. "Fé, Sabedoria e Crescimento para Todas as Áreas da Tua Vida!"</p>
+           <div class="social-links">
+                <a href="https://www.instagram.com/martinhossmadureira?igsh=bjM2bHUxMTFxc2px" target="_blank">
+                    <img src="../images/icons/instagram.png" alt="Instagram">
+                </a>
+                <a href="https://www.tiktok.com/@martinhossmadureira" target="_blank">
+                    <img src="../images/icons/tiktok.png" alt="TikTok">
+                </a>
+                <a href="https://www.youtube.com/@martinhossmadureira" target="_blank">
+                    <img src="../images/icons/youtube.png" alt="YouTube">
+                <a href="https://wa.com/244927791547" target="_blank">
+                    <img src="../images/icons/whatsapp.png" alt="Whatsapp">
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=100083436668190" target="_blank">
+                    <img src="../images/icons/facebook.png" alt="Facebook">
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <button id="scrollToTopBtn" title="Voltar ao Topo">
+        <i class="fas fa-arrow-up"></i> </button>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>
